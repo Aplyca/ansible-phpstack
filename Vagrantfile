@@ -6,10 +6,7 @@ Vagrant.configure(2) do |config|
           virtualbox.name = "Dev eZApp Web"
           virtualbox.cpus = 8
           virtualbox.memory = 2048
-		  override.vm.box = "ubuntu/trusty64"
-
-          config_machine.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/dev.ezapp.web"]
-          config_machine.ssh.insert_key = false
+		      override.vm.box = "ubuntu/trusty64"
       end
 
       # Asinging a provisioner

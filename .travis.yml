@@ -1,0 +1,16 @@
+---
+language: python
+python: "2.7"
+
+before_install:
+  - sudo apt-get update -qq
+  - ln -s ansible-role-ezapp ../Aplyca.eZApp
+
+install:
+  - sudo pip install -r tests/requirements.txt
+
+script:
+  - tests/test.sh
+  
+notifications:
+  email: false

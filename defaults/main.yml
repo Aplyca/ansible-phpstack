@@ -9,3 +9,90 @@ ezapp:
     nodejs: True
     s3fs: False
     cleanbox: False
+
+essentials:
+  packages:
+    - rsync
+    - lynx
+    - bash
+    - curl
+    - wget
+    - git
+    - acl
+    - ntp
+    - imagemagick
+  ssh:   
+    config:
+      - Host: github.com
+        StrictHostKeyChecking: "no"
+
+mysql:
+  cnf:
+    mysqld:
+      sort_buffer_size : 32M
+      query_cache_type: 1
+      query_cache_limit: 10M
+      query_cache_size: 128M
+      max_allowed_packet: 32M
+      tmp_table_size: 64M
+      bulk_insert_buffer_size: 16M
+      query_cache_min_res_unit: 8192
+      query_alloc_block_size: 16384
+      query_prealloc_size: 16384
+      transaction_prealloc_size: 1048576
+      transaction_alloc_block_size: 2097152
+      innodb_buffer_pool_size: 512M
+      innodb_additional_mem_pool_size: 64M
+      innodb_log_buffer_size: 8M
+      innodb_table_locks: 0
+      innodb_rollback_on_timeout: 1
+
+webapp:
+  installation_path: /var/www
+  apps: []
+
+php:
+  opcache:
+    enable_file_override: 1
+    interned_strings_buffer: 16
+    revalidate_path: 1
+    revalidate_freq: 60
+  core:
+    realpath_cache_size: 2046K
+    realpath_cache_ttl: 3600
+
+php:
+  core:
+    post_max_size: '120M'
+    upload_max_filesize: '120M'
+    memory_limit: '512M'
+    expose_php: 'Off'
+    max_execution_time: '120'
+    variables_order: 'EGPCS'
+    realpath_cache_size: 2046K
+    realpath_cache_ttl: 3600        
+  opcache:
+    max_accelerated_files: 10000
+    memory_consumption: 512
+    enable_file_override: 1
+    interned_strings_buffer: 16
+    revalidate_path: 1
+    revalidate_freq: 60
+  modules:
+    - cli
+    - curl
+    - xsl
+    - intl
+    - mysql
+    - imagick
+    - gd
+    - mcrypt
+
+s3fs:
+  source: "https://github.com/mauricios/s3fs-fuse/archive/master.zip"
+  add_to_fstab: False
+
+cleanbox:
+  remove:
+    - "/tmp/s3fs-fuse-*"
+    - "~/s3fs-fuse-*"       
