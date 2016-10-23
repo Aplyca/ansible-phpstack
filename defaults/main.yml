@@ -1,0 +1,11 @@
+---
+ezapp:
+  roles:
+    accelerator: True
+    webapp: True
+    aws: True
+    newrelic: True
+    ezsolr: True
+    nodejs: True
+    s3fs: False
+    cleanbox: False

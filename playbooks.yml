@@ -1,0 +1,5 @@
+---
+- name: "Provision eZ App machines"
+  hosts: all
+  roles:
+    - { role: Aplyca.eZApp, tags: ["ezapp"] }

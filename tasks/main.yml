@@ -1,0 +1,3 @@
+---
+- debug: var=ezapp verbosity=1
+  tags: vars

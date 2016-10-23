@@ -1,0 +1,9 @@
+---
+- src: Aplyca.WebApp
+- src: Aplyca.Accelerator
+- src: Aplyca.eZSolr
+- src: Aplyca.AWS
+- src: Aplyca.NewRelic
+- src: Aplyca.NodeJS
+- src: Aplyca.s3fs
+- src: Aplyca.Cleanbox
