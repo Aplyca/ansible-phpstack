@@ -36,20 +36,6 @@ mysql:
       innodb_table_locks: 0
       innodb_rollback_on_timeout: 1
 
-webapp:
-  installation_path: /var/www
-  apps: []
-
-php:
-  opcache:
-    enable_file_override: 1
-    interned_strings_buffer: 16
-    revalidate_path: 1
-    revalidate_freq: 60
-  core:
-    realpath_cache_size: 2046K
-    realpath_cache_ttl: 3600
-
 php:
   core:
     post_max_size: '120M'
