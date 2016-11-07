@@ -10,7 +10,16 @@ essentials:
     - acl
     - ntp
     - imagemagick
-  ssh:   
+    - default-jre-headless
+    - stunnel4
+  ssl_certs:
+    - name: ezdeven
+      path: /etc/ssl
+      bits: 2048
+      type: rsa
+      days: 3650
+      CommonName: "*"
+  ssh:
     config:
       - Host: github.com
         StrictHostKeyChecking: "no"
@@ -45,14 +54,14 @@ php:
     max_execution_time: '120'
     variables_order: 'EGPCS'
     realpath_cache_size: 2046K
-    realpath_cache_ttl: 3600        
+    realpath_cache_ttl: 3600
   opcache:
     max_accelerated_files: 10000
     memory_consumption: 512
     enable_file_override: 1
     interned_strings_buffer: 16
     revalidate_path: 1
-    revalidate_freq: 60
+    revalidate_freq: 0
   modules:
     - cli
     - curl
@@ -64,10 +73,14 @@ php:
     - mcrypt
 
 s3fs:
+  buckets:
+    - mountpoint: /mnt/storage/ezdeven
+      bucket: ezdeven-storage
+      options: "allow_other,use_cache=/tmp,max_stat_cache_size='100000',uid=33,gid=33,umask=002"
   source: "https://github.com/mauricios/s3fs-fuse/archive/master.zip"
   add_to_fstab: False
 
 cleanbox:
   remove:
     - "/tmp/s3fs-fuse-*"
-    - "~/s3fs-fuse-*"       
+    - "~/s3fs-fuse-*"

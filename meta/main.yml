@@ -1,10 +1,5 @@
 ---
 dependencies:
-  - { role: Aplyca.WebApp, when: "ezapp.roles.webapp", tags: ["webapp"] }
-  - { role: Aplyca.eZSolr, when: "ezapp.roles.ezsolr", tags: ["ezsolr"] }
-  - { role: Aplyca.Accelerator, when: "ezapp.roles.accelerator", tags: ["accelerator"] }
-  - { role: Aplyca.Aws, when: "ezapp.roles.aws", tags: ["aws"] }
-  - { role: Aplyca.NodeJS, when: "ezapp.roles.nodejs", tags: ["nodejs"] }
-  - { role: Aplyca.NewRelic, when: "ezapp.roles.newrelic", tags: ["newrelic"] }
-  - { role: Aplyca.s3fs, when: "ezapp.roles.s3fs", tags: ["s3fs"] }
-  - { role: Aplyca.Cleanbox, when: "ezapp.roles.cleanbox", tags: ["cleanbox"] }
+  - { role: Aplyca.WebApp, tags: ["webapp"] }
+  - { role: Aplyca.s3fs, tags: ["s3fs"] }
+  - { role: Aplyca.Cleanbox, tags: ["cleanbox"] }
