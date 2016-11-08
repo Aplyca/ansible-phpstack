@@ -1,7 +1,9 @@
 ---
 - name: "Provision eZDeven machine"
   hosts: all
+  vars_files:
+    - vars/main.yml
   roles:
       - { role: Aplyca.WebApp, tags: ["webapp"] }
-      - { role: Aplyca.s3fs, tags: ["s3fs"] }
+      - { role: Aplyca.S3fs, tags: ["s3fs"] }
       - { role: Aplyca.Cleanbox, tags: ["cleanbox"] }

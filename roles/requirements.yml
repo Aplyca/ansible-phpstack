@@ -1,4 +1,4 @@
 ---
 - src: Aplyca.WebApp
-- src: Aplyca.s3fs
+- src: Aplyca.S3fs
 - src: Aplyca.Cleanbox

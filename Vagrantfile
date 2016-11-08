@@ -13,8 +13,10 @@ Vagrant.configure(2) do |config|
       config_machine.vm.provision :ansible, run: "always" do |provisioner|
           provisioner.playbook = "playbooks.yml"
           provisioner.extra_vars = "tests/test.yml" if File.file?("tests/test.yml")
-          provisioner.verbose = "v"
-          provisioner.tags = "vars"
+          provisioner.galaxy_role_file = "roles/requirements.yml"
+          provisioner.galaxy_roles_path = "roles"
+          #provisioner.verbose = "v"
+          #provisioner.tags = "vars"
       end
   end
 end

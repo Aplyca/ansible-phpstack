@@ -1,5 +1,8 @@
 # eZ Development Environment provisioned by Ansible
 
+[![Build Status](https://travis-ci.org/Aplyca/ansible-ezdeven.svg?branch=master)](https://travis-ci.org/Aplyca/ansible-ezdeven)
+[![Circle CI](https://circleci.com/gh/Aplyca/ansible-ezdeven.svg?style=svg)](https://circleci.com/gh/Aplyca/ansible-ezdeven)
+
 ## Ansible
 * Read how to use the **Ansible** provisioner in README.md of each role.
 * To know more about Ansible: http://www.ansible.com
