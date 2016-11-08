@@ -20,5 +20,5 @@ vagrant box add ezdeven.box --name Aplyca/eZDeven
 echo "Testing box"
 cd tests
 vagrant up
-vagrant ssh -- "ps aux | grep 'apache|mysql'"
+vagrant ssh -- "ps aux | grep -E 'apache|mysql'"
 vagrant ssh -- "php -v"
