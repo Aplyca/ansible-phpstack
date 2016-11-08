@@ -64,6 +64,7 @@ php:
     revalidate_freq: 0
   modules:
     - cli
+    - mbstring    
     - curl
     - xsl
     - intl
