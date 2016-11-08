@@ -7,7 +7,7 @@ vagrant destroy -f
 vagrant up
 
 echo "Packaging box"
-rm -rf ezapp.box
+rm -rf ezdeven.box
 vagrant package --output ezdeven.box
 
 echo "Destroying machine"
@@ -19,6 +19,6 @@ vagrant box add ezdeven.box --name Aplyca/eZDeven
 
 echo "Testing box"
 cd tests
-vagrant up
+vagrant up --no-provision
 vagrant ssh -- "ps aux | grep -E 'apache|mysql'"
 vagrant ssh -- "php -v"
