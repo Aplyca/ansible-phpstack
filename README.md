@@ -1,17 +1,11 @@
-# eZ App Environment provisioned by Ansible
-
-## SSH
-
-* Use your SSH config file (~/.ssh/config) to confgire all the SSH connections, for example the inventory hosts connections.
-* Use SSH keys to connect to remote hosts
-* Use diferent SSH keys for diffrent environments (development/stage/prod)
+# eZ Development Environment provisioned by Ansible
 
 ## Ansible
 * Read how to use the **Ansible** provisioner in README.md of each role.
 * To know more about Ansible: http://www.ansible.com
 
 ### Dependencies
-Install the rol dependencies using Ansible Galaxy
+Install the role dependencies using Ansible Galaxy
 
 ```bash
 ansible-galaxy install -r roles/requirements.yml
@@ -42,11 +36,6 @@ By default the custom.yml file is ignored in git, be mindful to not add to versi
 ### Inventory
 See the `inventories` folders to know the available inventories
 Use the "inventories/custom" to place your custom inventory.
-
-## Tests
-```bash
-ansible-playbook -i inventories/local tests/playbooks.yml
-```
 
 ### Vagrant
 * You can use Vagrant to set up and provision a VM in order to run tests.

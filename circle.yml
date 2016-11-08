@@ -3,7 +3,5 @@ dependencies:
     - sudo pip install -r tests/requirements.txt
 
 test:
-  pre:
-    - sudo ln -s ansible-role-ezapp ../Aplyca.eZApp
   override:
     - tests/test.sh

@@ -1,5 +1,7 @@
 ---
-- name: "Provision eZ App machines"
+- name: "Provision eZDeven machine"
   hosts: all
   roles:
-    - { role: Aplyca.eZApp, tags: ["ezapp"] }
+      - { role: Aplyca.WebApp, tags: ["webapp"] }
+      - { role: Aplyca.s3fs, tags: ["s3fs"] }
+      - { role: Aplyca.Cleanbox, tags: ["cleanbox"] }
