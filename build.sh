@@ -14,8 +14,8 @@ echo "Destroying machine"
 vagrant destroy -f
 
 echo "Replacing box"
-vagrant box remove Aplyca/eZDeven
-vagrant box add ezdeven.box --name Aplyca/eZDeven
+vagrant box remove Test/eZDeven
+vagrant box add ezdeven.box --name Test/eZDeven
 
 echo "Testing box"
 cd tests

@@ -1,12 +1,11 @@
 Vagrant.configure(2) do |config|
-  config.vm.define "ezdeven", primary: true, autostart: true do |config_machine|
+  config.vm.define "ezdeven.vagrant", primary: true, autostart: true do |config_machine|
       config.vm.synced_folder ".", "/vagrant", disabled: true
       #Assigning a provider
       config_machine.vm.provider :virtualbox do |virtualbox, override|
-          virtualbox.name = "eZDeven"
-          virtualbox.cpus = 8
+          virtualbox.name = "Vagrant eZDeven"
           virtualbox.memory = 2048
-		  override.vm.box = "ubuntu/trusty64"
+		  override.vm.box = "ubuntu/xenial64"
       end
 
       # Asinging a provisioner
