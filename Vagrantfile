@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.define "lampdeven.vagrant", primary: true, autostart: true do |config_machine|
+      config.ssh.username = "ubuntu"
       config.vm.synced_folder ".", "/vagrant", disabled: true
       #Assigning a provider
       config_machine.vm.provider :virtualbox do |virtualbox, override|
