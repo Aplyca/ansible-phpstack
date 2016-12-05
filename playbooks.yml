@@ -1,5 +1,12 @@
 ---
-- name: "Provision eZDeven machine"
+- name: "Preparing machine"
+  hosts: all
+  gather_facts: False
+  tasks:
+    - name: Ensure python binary is present
+      raw: "cd /usr/bin && sudo ln -sf python3 python"
+
+- name: "Provision LAMPDeven machine"
   hosts: all
   vars_files:
     - vars/main.yml

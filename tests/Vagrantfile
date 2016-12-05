@@ -1,10 +1,10 @@
 Vagrant.configure(2) do |config|
-  config.vm.define "test.ezdeven.vagrant", primary: true, autostart: true do |config_machine|
+  config.vm.define "test.lampdeven.vagrant", primary: true, autostart: true do |config_machine|
       config.vm.synced_folder ".", "/vagrant", disabled: true
       #Assigning a provider
       config_machine.vm.provider :virtualbox do |virtualbox, override|
-          virtualbox.name = "Test Vagrant eZDeven"
-		  override.vm.box = "Test/eZDeven"
+          virtualbox.name = "Test Vagrant LAMPDeven"
+		  override.vm.box = "Test/LAMPDeven"
       end
   end
 end

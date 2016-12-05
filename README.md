@@ -1,7 +1,7 @@
-# eZ Development Environment provisioned by Ansible
+# LAMP Development Environment provisioned by Ansible
 
-[![Build Status](https://travis-ci.org/Aplyca/ansible-ezdeven.svg?branch=master)](https://travis-ci.org/Aplyca/ansible-ezdeven)
-[![Circle CI](https://circleci.com/gh/Aplyca/ansible-ezdeven.svg?style=svg)](https://circleci.com/gh/Aplyca/ansible-ezdeven)
+[![Build Status](https://travis-ci.org/Aplyca/ansible-lampdeven.svg?branch=master)](https://travis-ci.org/Aplyca/ansible-lampdeven)
+[![Circle CI](https://circleci.com/gh/Aplyca/ansible-lampdeven.svg?style=svg)](https://circleci.com/gh/Aplyca/ansible-lampdeven)
 
 ## Ansible
 * Read how to use the **Ansible** provisioner in README.md of each role.
@@ -53,5 +53,6 @@ tests/vagrant.sh
 tests/docker.sh
 ```
 
-## Version control
-* Use git to push/push all your changes.
+## TODOs
+* Upgrade to Ubuntu Xenial 16.04.
+* Add Robo task runner globally

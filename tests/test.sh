@@ -1,5 +1,5 @@
 #!/bin/bash
-# test eZApp provisiones with ansible
+# Test LAMPDeven provisiones with ansible
 
 cd $(dirname "$0") && cd ..
 
