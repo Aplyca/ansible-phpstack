@@ -74,6 +74,7 @@ php:
     - imagick
     - gd
     - mcrypt
+    - ldap
 
 s3fs:
   buckets:
