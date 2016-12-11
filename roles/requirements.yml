@@ -2,3 +2,4 @@
 - src: Aplyca.WebApp
 - src: Aplyca.S3fs
 - src: Aplyca.Cleanbox
+- src: Aplyca.AppProvision

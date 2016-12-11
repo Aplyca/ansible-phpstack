@@ -55,4 +55,3 @@ tests/docker.sh
 
 ## TODOs
 * Upgrade to Ubuntu Xenial 16.04.
-* Add Robo task runner globally

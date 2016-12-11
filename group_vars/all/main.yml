@@ -29,6 +29,15 @@ essentials:
       - Host: github.com
         StrictHostKeyChecking: "no"
 
+webapp:
+  release_dir: ""
+  installation_path: "/home/{{ ansible_user_id }}"
+  apps:
+    - name: app
+      directories:
+        - /mnt/app/s3
+        - /mnt/app/s3fs
+
 mysql:
   databases:
     - name: "app"
@@ -89,20 +98,16 @@ apache:
         ServerAlias:
           - "*"
         DocumentRoot: "/home/{{ ansible_user_id }}/app"
-        SSLCertificateFile: /etc/ssl/grupoenergiadebogota.com/app.crt
-        SSLCertificateKeyFile: /etc/ssl/grupoenergiadebogota.com/app.key
+        SSLCertificateFile: /etc/ssl/app.crt
+        SSLCertificateKeyFile: /etc/ssl/app.key
 
 s3fs:
   buckets:
-    - mountpoint: /mnt/storage/s3fs
+    - mountpoint: /mnt/app/s3fs
       bucket: s3fs-storage
       options: "allow_other,use_cache=/tmp,max_stat_cache_size='100000',uid=33,gid=33,umask=002"
   source: "https://github.com/mauricios/s3fs-fuse/archive/master.zip"
   add_to_fstab: False
-
-webapp:
-  apps:
-    - name: app
 
 cleanbox:
   remove:
