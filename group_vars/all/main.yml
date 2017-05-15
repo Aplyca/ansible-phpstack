@@ -11,10 +11,9 @@ essentials:
     - ntp
     - zip
     - unzip
+    - python3-pip    
     - imagemagick
-    - python2.7
     - apt-transport-https
-    - python-pip
     - default-jre-headless
     - stunnel4
   ssl_certs:
@@ -61,22 +60,25 @@ mysql:
       innodb_rollback_on_timeout: 1
 
 php:
-  core:
-    post_max_size: '120M'
-    upload_max_filesize: '120M'
-    memory_limit: '512M'
-    expose_php: 'Off'
-    max_execution_time: '120'
-    variables_order: 'EGPCS'
-    realpath_cache_size: 2046K
-    realpath_cache_ttl: 3600
-  opcache:
-    max_accelerated_files: 10000
-    memory_consumption: 512
-    enable_file_override: 1
-    interned_strings_buffer: 16
-    revalidate_path: 1
-    revalidate_freq: 0
+  config:
+    - name: ALL
+      ini:
+        variables_order: 'EGPCS'
+        realpath_cache_size: 2046K
+        realpath_cache_ttl: 3600
+        opcache:
+          max_accelerated_files: 10000
+          memory_consumption: 512
+          enable_file_override: 1
+          interned_strings_buffer: 16
+          revalidate_path: 1
+          revalidate_freq: 0
+    - name: apache2
+      ini:
+        post_max_size: '120M'
+        upload_max_filesize: '120M'
+        memory_limit: '512M'
+        max_execution_time: '120'        
   modules:
     - cli
     - mbstring

@@ -1,7 +1,9 @@
 ---
-- name: "Provision LAMPDeven machine"
+- name: "Provision LAMP machine"
   hosts: all
   roles:
-      - { role: Aplyca.WebApp, tags: ["webapp"] }
-      - { role: Aplyca.S3fs, tags: ["s3fs"] }
-      - { role: Aplyca.Cleanbox, tags: ["cleanbox"] }
+    - { role: Aplyca.Essentials, tags: ["essentials"] }
+    - { role: Aplyca.WebApp, tags: ["webapp"] }
+    - { role: Aplyca.LAMP, tags: ["lamp"] }    
+    - { role: Aplyca.s3fs, tags: ["s3fs"] }
+    #- { role: Aplyca.Cleanbox, tags: ["cleanbox"] }
