@@ -11,7 +11,7 @@ essentials:
     - ntp
     - zip
     - unzip
-    - python3-pip    
+    - python3-pip
     - imagemagick
     - apt-transport-https
     - default-jre-headless
@@ -78,7 +78,7 @@ php:
         post_max_size: '120M'
         upload_max_filesize: '120M'
         memory_limit: '512M'
-        max_execution_time: '120'        
+        max_execution_time: '120'
   modules:
     - cli
     - mbstring
@@ -96,12 +96,14 @@ apache:
   virtualhosts:
     - listen: "*:80"
       directives:
-        ServerName: app
-        ServerAlias:
-          - "*"
-        DocumentRoot: "/home/{{ ansible_user_id }}/app"
-        SSLCertificateFile: /etc/ssl/app.crt
-        SSLCertificateKeyFile: /etc/ssl/app.key
+        core:
+          ServerName: app
+          ServerAlias:
+            - "*"
+          DocumentRoot: "/home/{{ ansible_user_id }}/app"
+        ssl:
+          SSLCertificateFile: /etc/ssl/app.crt
+          SSLCertificateKeyFile: /etc/ssl/app.key
 
 s3fs:
   buckets:
