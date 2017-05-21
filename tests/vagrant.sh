@@ -1,5 +1,5 @@
 #!/bin/bash
-# Test LAMPDeven provisioned with ansible
+# Test PHPStack provisioned with ansible
 
 echo "Starting VM and provision with role"
 vagrant destroy -f &&

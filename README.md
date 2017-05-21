@@ -1,4 +1,4 @@
-# LAMP Development Environment provisioned by Ansible
+# PHP Stack Development Environment provisioned by Ansible
 
 [![Build Status](https://travis-ci.org/Aplyca/ansible-lampdeven.svg?branch=master)](https://travis-ci.org/Aplyca/ansible-lampdeven)
 [![Circle CI](https://circleci.com/gh/Aplyca/ansible-lampdeven.svg?style=svg)](https://circleci.com/gh/Aplyca/ansible-lampdeven)

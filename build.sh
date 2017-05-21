@@ -7,19 +7,20 @@ vagrant destroy -f
 vagrant up
 
 echo "Packaging box"
-rm -rf lampdeven.box
-vagrant package --output lampdeven.box
+rm -rf phpstack.box
+vagrant package --output phpstack.box
 
 echo "Destroying machine"
-vagrant destroy -f
+#vagrant destroy -f
 
 echo "Replacing box"
-cd tests
-vagrant destroy -f
-vagrant box remove Test/LAMPDeven
-vagrant box add lampdeven.box --name Test/LAMPDeven
+
+vagrant box remove Test/PHPStack --force
+vagrant box add phpstack.box --name Test/PHPStack
 
 echo "Testing box"
+cd tests
+vagrant destroy -f
 vagrant up --no-provision
 vagrant ssh -- "ps aux | grep -E 'apache|mysql'"
 vagrant ssh -- "php -v"

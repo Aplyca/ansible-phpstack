@@ -1,9 +1,21 @@
 ---
-- name: "Provision LAMP machine"
+- name: "Provision PHPStack machine"
   hosts: all
+  vars:
+    phpstack:
+      roles:
+        essentials: true
+        mysql: true
+        webapp: true
+        apache: true
+        php: true
+        s3fs: true
+        cleanbox: true
   roles:
-    - { role: Aplyca.Essentials, tags: ["essentials"] }
-    - { role: Aplyca.WebApp, tags: ["webapp"] }
-    - { role: Aplyca.LAMP, tags: ["lamp"] }
-    - { role: Aplyca.s3fs, tags: ["s3fs"] }
-    - { role: Aplyca.Cleanbox, tags: ["cleanbox"] }
+    - { role: Aplyca.Essentials, when: "phpstack.roles.essentials", tags: ["essentials"] }
+    - { role: Aplyca.MySQL, when: "phpstack.roles.mysql", tags: ["mysql"] }
+    - { role: Aplyca.WebApp, when: "phpstack.roles.webapp", tags: ["webapp"] }
+    - { role: Aplyca.Apache, when: "phpstack.roles.apache", tags: ["apache"] }
+    - { role: Aplyca.PHP, when: "phpstack.roles.php", tags: ["php"] }
+    - { role: Aplyca.S3fs, when: "phpstack.roles.s3fs", tags: ["s3fs"] }
+    - { role: Aplyca.Cleanbox, when: "phpstack.roles.cleanbox", tags: ["cleanbox"] }

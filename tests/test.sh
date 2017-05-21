@@ -1,5 +1,5 @@
 #!/bin/bash
-# Test LAMPDeven provisiones with ansible
+# Test PHPStack provisiones with ansible
 
 cd $(dirname "$0") && cd ..
 

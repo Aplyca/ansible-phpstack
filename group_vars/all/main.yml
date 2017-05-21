@@ -38,6 +38,10 @@ webapp:
         - /mnt/app/s3fs
 
 mysql:
+  users:
+    - name: "app"
+      priv: "app.*:ALL,GRANT/`app\\_%`.*:ALL,GRANT"
+      host: "localhost"
   databases:
     - name: "app"
   cnf:
@@ -63,6 +67,7 @@ php:
   config:
     - name: ALL
       ini:
+        expose_php: 'Off'
         variables_order: 'EGPCS'
         realpath_cache_size: 2046K
         realpath_cache_ttl: 3600
@@ -91,8 +96,30 @@ php:
     - gd
     - mcrypt
     - ldap
+  packages:
+    - libapache2-mod-php5.6
 
 apache:
+  config:
+    Options: "FollowSymLinks"
+    ServerTokens: "Prod"
+    ServerSignature: "Off"
+  sections:
+    Directory:
+      - "/":
+        - "Options FollowSymLinks"
+        - "AllowOverride None"
+        - "Order Deny,Allow"
+        - "Deny from all"
+        - "Require all denied"
+  ssl:
+    SSLProtocol: "all -SSLv2 -SSLv3 -TLSv1"
+    SSLCipherSuite: "ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS"
+  enable_modules:
+    - ssl
+    - rewrite
+    - expires
+    - headers
   virtualhosts:
     - listen: "*:80"
       directives:

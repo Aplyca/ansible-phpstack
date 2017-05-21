@@ -1,9 +1,9 @@
 Vagrant.configure(2) do |config|
-  config.vm.define "lamp-provision.vagrant", primary: true, autostart: true do |config_machine|
+  config.vm.define "phpstack-provision.vagrant", primary: true, autostart: true do |config_machine|
       config.vm.synced_folder ".", "/vagrant", disabled: true
       #Assigning a provider
       config_machine.vm.provider :virtualbox do |virtualbox, override|
-          virtualbox.name = "Vagrant LAMP Provision"
+          virtualbox.name = "Vagrant PHPStack Provision"
           virtualbox.memory = 2048
           #override.vm.box = "ubuntu/trusty64"
           override.vm.box = "ubuntu/xenial64"
@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
           provisioner.extra_vars = "tests/test.yml" if File.file?("tests/test.yml")
           #provisioner.galaxy_role_file = "roles/requirements.yml"
           #provisioner.galaxy_roles_path = "roles"
-          provisioner.raw_arguments = ["-e ansible_python_interpreter=/usr/bin/python3"]          
+          provisioner.raw_arguments = ["-e ansible_python_interpreter=/usr/bin/python3"]
           provisioner.verbose = "v"
           #provisioner.tags = "vars"
       end

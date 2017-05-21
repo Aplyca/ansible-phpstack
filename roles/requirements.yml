@@ -1,5 +1,9 @@
 ---
-- src: Aplyca.WebApp
-- src: Aplyca.s3fs
-- src: Aplyca.Cleanbox
+- src: Aplyca.Essentials  
+- src: Aplyca.Apache
+- src: Aplyca.MySQL
+- src: Aplyca.PHP
 - src: Aplyca.AppProvision
+- src: Aplyca.WebApp
+- src: Aplyca.S3fs
+- src: Aplyca.Cleanbox
