@@ -23,10 +23,13 @@ essentials:
       type: rsa
       days: 3650
       CommonName: "*"
-  ssh:
-    config:
-      - Host: github.com
-        StrictHostKeyChecking: "no"
+  users:
+    - name: ubuntu
+      group: ubuntu
+      ssh:
+        config:
+          - Host: github.com
+            StrictHostKeyChecking: "no"
 
 webapp:
   release_dir: ""
@@ -107,7 +110,7 @@ apache:
   sections:
     Directory:
       - "/":
-        - "Options FollowSymLinks"
+        - "Options +FollowSymLinks -Indexes -Includes -ExecCGI"
         - "AllowOverride None"
         - "Order Deny,Allow"
         - "Deny from all"

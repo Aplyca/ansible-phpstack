@@ -4,7 +4,7 @@
 echo "Starting VM and provision with role"
 vagrant box update
 vagrant destroy -f
-vagrant up
+vagrant up &&
 
 echo "Packaging box"
 rm -rf phpstack.box
