@@ -16,6 +16,9 @@ essentials:
     - apt-transport-https
     - default-jre-headless
     - stunnel4
+    - nfs-common
+  remove_packages:
+    - python2*
   ssl_certs:
     - name: app
       path: /etc/ssl
