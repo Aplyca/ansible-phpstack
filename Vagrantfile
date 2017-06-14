@@ -1,3 +1,12 @@
+host = RbConfig::CONFIG['host_os']
+if host =~ /darwin/
+  cpus = `sysctl -n hw.ncpu`.to_i
+elsif host =~ /linux/
+  cpus = `nproc`.to_i
+else
+  cpus = 2
+end
+
 Vagrant.configure(2) do |config|
   config.vm.define "phpstack-provision.vagrant", primary: true, autostart: true do |config_machine|
       config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -5,6 +14,12 @@ Vagrant.configure(2) do |config|
       config_machine.vm.provider :virtualbox do |virtualbox, override|
           virtualbox.name = "Vagrant PHPStack Provision"
           virtualbox.memory = 2048
+          virtualbox.cpus = cpus
+          virtualbox.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+          virtualbox.customize [ "modifyvm", :id, "--audio", "none" ]
+          virtualbox.customize [ "modifyvm", :id, "--boot1", "disk" ]
+          virtualbox.customize [ "modifyvm", :id, "--boot2", "none" ]
+          virtualbox.customize [ "modifyvm", :id, "--boot3", "none" ]
           #override.vm.box = "ubuntu/trusty64"
           override.vm.box = "ubuntu/xenial64"
       end
