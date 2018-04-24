@@ -85,6 +85,7 @@ php:
     - gd
     - mcrypt
     - ldap
+    - zip
   packages:
     - libapache2-mod-php5.6
   ini:
